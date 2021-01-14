@@ -14,7 +14,7 @@ export function PeopleListSearch({
 }: Props) {
   const [value, setValue] = useState('');
 
-  const handleDebouncedSearch = useCallback(debounce(onSearch, DEBOUNCE_MS), [onSearch]);
+  const handleDebouncedSearch = useCallback<(value: string) => void>(debounce(onSearch, DEBOUNCE_MS), [onSearch]);
 
   function handleChange(event) {
     setValue(event.target.value);
